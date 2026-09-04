@@ -1,0 +1,119 @@
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at center, #15314a 0%, #07131f 55%, #02070c 100%);
+
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.snowflake-wrapper {
+  width: 180px;
+  height: 180px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.snowflake {
+  width: 140px;
+  height: 140px;
+
+  animation: rotateSnowflake 5s linear infinite;
+
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(76%)
+    sepia(20%)
+    saturate(1500%)
+    hue-rotate(170deg)
+    brightness(105%);
+
+  opacity: 0.75;
+
+  transition:
+    filter 0.8s ease,
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.snowflake.complete {
+  animation-play-state: paused;
+
+  filter:
+    brightness(0)
+    invert(1)
+    drop-shadow(0 0 12px rgba(180, 230, 255, 0.9));
+
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+@keyframes rotateSnowflake {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.progress {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.enter-button {
+  margin-top: 25px;
+
+  padding: 12px 42px;
+
+  border: 1px solid #b9e8ff;
+  border-radius: 30px;
+
+  background: transparent;
+  color: white;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.enter-button:hover {
+  background: rgba(180, 230, 255, 0.12);
+  box-shadow: 0 0 18px rgba(180, 230, 255, 0.35);
+}
+
+.clan {
+  position: absolute;
+  bottom: 35px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  letter-spacing: 3px;
+}
+
+.clan span {
+  font-size: 12px;
+  opacity: 0.65;
+  letter-spacing: 2px;
+}
