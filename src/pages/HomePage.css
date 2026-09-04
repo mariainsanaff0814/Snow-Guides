@@ -76,9 +76,148 @@
 }
 
 .menu-button {
-  grid-column: 1;
   font-size: 23px;
   line-height: 1;
+}
+
+.app-menu {
+  position: relative;
+  z-index: 30;
+  grid-column: 1;
+  width: 44px;
+}
+
+.app-menu-panel {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  width: min(280px, calc(100vw - (var(--page-gutter) * 2)));
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  color: var(--text-main);
+  background: color-mix(in srgb, var(--bg-main) 90%, var(--bg-secondary));
+  box-shadow:
+    0 16px 42px color-mix(in srgb, var(--bg-main) 52%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--text-main) 10%, transparent);
+  backdrop-filter: blur(20px);
+  animation: app-menu-in 0.18s ease-out;
+}
+
+.install-menu-option,
+.install-menu-status {
+  width: 100%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border: 1px solid color-mix(in srgb, var(--border) 76%, transparent);
+  border-radius: 13px;
+  color: var(--text-main);
+  background: color-mix(in srgb, var(--card-bg) 84%, transparent);
+  font: inherit;
+  text-align: left;
+}
+
+.install-menu-option {
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.install-menu-option:hover,
+.install-menu-option:focus-visible {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--card-bg));
+}
+
+.install-menu-option svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  fill: none;
+  stroke: var(--accent-strong);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.install-menu-option span,
+.install-menu-status {
+  min-width: 0;
+}
+
+.install-menu-option strong,
+.install-menu-option small,
+.install-menu-status strong,
+.install-menu-status small {
+  display: block;
+}
+
+.install-menu-option strong,
+.install-menu-status strong {
+  font-size: 14px;
+}
+
+.install-menu-option small,
+.install-menu-status small {
+  margin-top: 3px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.install-menu-status {
+  min-height: 0;
+  display: block;
+}
+
+.install-help-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: color-mix(in srgb, var(--bg-main) 72%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.install-help-modal {
+  width: min(100%, 420px);
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  color: var(--text-main);
+  background: color-mix(in srgb, var(--bg-main) 92%, var(--bg-secondary));
+  box-shadow: 0 20px 70px color-mix(in srgb, var(--bg-main) 65%, transparent);
+  animation: app-menu-in 0.2s ease-out;
+}
+
+.install-help-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.install-help-header h2 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.install-help-modal p {
+  margin: 11px 0 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+@keyframes app-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(0.98);
+  }
 }
 
 .theme-button {
@@ -484,7 +623,13 @@
 @media (prefers-reduced-motion: reduce) {
   .home-page,
   .ditto-card,
-  .ditto-image {
+  .ditto-image,
+  .install-menu-option {
     transition: none;
+  }
+
+  .app-menu-panel,
+  .install-help-modal {
+    animation: none;
   }
 }

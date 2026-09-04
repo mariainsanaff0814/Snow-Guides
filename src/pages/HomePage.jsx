@@ -4,6 +4,7 @@ import snowflake from "../assets/snowflake.svg";
 import farmingIcon from "../assets/farming.svg?raw";
 import guideIcon from "../assets/guide.svg?raw";
 import mariaIcon from "../assets/maria.svg?raw";
+import PWAInstallMenu from "../components/PWAInstallMenu";
 import DittoGuidePage from "./DittoGuidePage";
 import "./HomePage.css";
 
@@ -36,9 +37,7 @@ export default function HomePage() {
     <main className={`home-page theme-${theme}`}>
       <div className="content-container">
         <header className="home-header">
-          <button className="menu-button" aria-label="Menú">
-            ☰
-          </button>
+          <PWAInstallMenu />
 
           <div className="brand">
             <img src={snowflake} alt="" className="brand-snowflake" />
