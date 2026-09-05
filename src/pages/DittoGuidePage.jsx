@@ -6,7 +6,7 @@ import GuideRequirements from "../components/guide/GuideRequirements";
 import GuideLocation from "../components/guide/GuideLocation";
 import GuidePokemon from "../components/guide/GuidePokemon";
 import GuideBalls from "../components/guide/GuideBalls";
-import GuidePlaceholder from "../components/guide/GuidePlaceholder";
+import GuideStatistics from "../components/guide/GuideStatistics";
 import "./DittoGuidePage.css";
 
 const tabContent = {
@@ -15,7 +15,7 @@ const tabContent = {
   location: <GuideLocation />,
   pokemon: <GuidePokemon />,
   balls: <GuideBalls />,
-  stats: <GuidePlaceholder section="stats" />,
+  stats: <GuideStatistics />,
 };
 
 export default function DittoGuidePage({ theme, onBack }) {

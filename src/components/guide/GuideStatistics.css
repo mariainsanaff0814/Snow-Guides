@@ -1,0 +1,374 @@
+.statistics-guide {
+  --profit: #58e6a2;
+  --cost: #ff8da1;
+  display: grid;
+  gap: 13px;
+}
+
+.stats-section {
+  min-width: 0;
+}
+
+.stats-section h3 {
+  margin: 0;
+}
+
+.stats-intro {
+  background:
+    radial-gradient(circle at 92% 10%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 34%),
+    var(--card-bg);
+}
+
+.market-summary-grid,
+.sales-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.market-card,
+.sales-card,
+.calculator-controls,
+.calculator-result,
+.capture-cost-card {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: color-mix(in srgb, var(--bg-main) 25%, transparent);
+}
+
+.market-card h3 {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.market-card > strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--accent-strong);
+  font-size: 22px;
+}
+
+.market-card > span,
+.market-card > small {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.stats-note {
+  margin: 13px 0 0;
+  padding: 9px 11px;
+  border: 1px solid color-mix(in srgb, var(--accent) 27%, var(--border));
+  border-radius: 13px;
+  color: var(--text-secondary);
+  background: color-mix(in srgb, var(--bg-secondary) 17%, transparent);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.calculator-layout {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.calculator-controls fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.calculator-controls legend,
+.calculator-field {
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.quantity-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.quantity-options button {
+  min-height: 38px;
+  padding: 7px 11px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  background: color-mix(in srgb, var(--card-bg) 82%, transparent);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.quantity-options button.active {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--accent) 12%, var(--card-bg));
+}
+
+.calculator-selects {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.calculator-field {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.calculator-field input,
+.calculator-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 11px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-main);
+  background: color-mix(in srgb, var(--bg-main) 68%, var(--card-bg));
+  font: inherit;
+  font-size: 13px;
+}
+
+.calculator-field option {
+  color: var(--text-main);
+  background: var(--bg-main);
+}
+
+.calculator-result h3,
+.capture-cost-card h3 {
+  font-size: 17px;
+}
+
+.calculator-result dl,
+.capture-cost-grid,
+.sales-card dl {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+}
+
+.calculator-result dl > div,
+.capture-cost-grid > div,
+.sales-card dl > div {
+  min-width: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.calculator-result dl > div:last-child,
+.sales-card dl > div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.calculator-result dt,
+.capture-cost-grid dt,
+.sales-card dt {
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.calculator-result dd,
+.capture-cost-grid dd,
+.sales-card dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+  color: var(--accent-strong);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.calculator-result .value-income,
+.calculator-result .value-profit {
+  color: var(--profit);
+}
+
+.calculator-result .value-cost {
+  color: var(--cost);
+}
+
+.capture-cost-card {
+  margin-top: 10px;
+}
+
+.capture-cost-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.capture-cost-grid > div:nth-last-child(-n + 2) {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.capture-cost-grid small {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-secondary);
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+.chart-context {
+  display: inline-block;
+  margin-top: 11px;
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.profit-chart {
+  display: grid;
+  gap: 13px;
+  margin-top: 16px;
+}
+
+.profit-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.profit-label strong {
+  color: var(--profit);
+}
+
+.profit-track {
+  height: 9px;
+  margin-top: 6px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-main) 45%, transparent);
+}
+
+.profit-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--profit));
+}
+
+.history-chart {
+  margin-top: 14px;
+}
+
+.history-chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.history-grid-line {
+  stroke: color-mix(in srgb, var(--border) 55%, transparent);
+  stroke-width: 1;
+  stroke-dasharray: 6 7;
+}
+
+.history-line {
+  fill: none;
+  stroke: var(--accent-strong);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent) 45%, transparent));
+}
+
+.history-point {
+  fill: var(--bg-main);
+  stroke: var(--accent-strong);
+  stroke-width: 5;
+}
+
+.history-values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.history-values div {
+  min-width: 0;
+  text-align: center;
+}
+
+.history-values span,
+.history-values strong {
+  display: block;
+}
+
+.history-values span {
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.history-values strong {
+  margin-top: 3px;
+  color: var(--accent-strong);
+  font-size: clamp(10px, 3vw, 13px);
+}
+
+.sales-card h3 {
+  color: var(--accent-strong);
+  font-size: 18px;
+}
+
+.sales-card-box {
+  border-color: color-mix(in srgb, var(--profit) 45%, var(--border));
+}
+
+.sales-difference {
+  margin: 13px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.sales-difference strong {
+  color: var(--profit);
+}
+
+.statistics-disclaimer p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.statistics-disclaimer p + p {
+  margin-top: 7px;
+}
+
+@media (min-width: 560px) {
+  .market-summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .calculator-layout,
+  .sales-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .calculator-selects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .calculator-field {
+    margin-top: 0;
+  }
+}

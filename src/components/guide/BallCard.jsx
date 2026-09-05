@@ -17,6 +17,18 @@ export default function BallCard({ ball }) {
           {ball.note}
         </aside>
       )}
+
+      <dl className="ball-metrics">
+        <div>
+          <dt>Ratio de captura</dt>
+          <dd>{ball.captureRateLabel}</dd>
+          {ball.captureCondition && <small>{ball.captureCondition}</small>}
+        </div>
+        <div>
+          <dt>{ball.metricLabel ?? "Precio"}</dt>
+          <dd>{ball.price}</dd>
+        </div>
+      </dl>
     </article>
   );
 }
